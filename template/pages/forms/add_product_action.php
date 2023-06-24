@@ -10,7 +10,6 @@ include "../../config.php";
   $price = $_POST['price'];
   $quantity = $_POST['quantity'];
   $isPublished = isset($_POST['is_published']) ? 1 : 0;
-  $isPremium = isset($_POST['is_premium']) ? 1 : 0; 
   $compid = $_POST['dropdown'];
   $user_id = 1;
 $file_name= $_FILES['image']['name'];
@@ -37,7 +36,7 @@ if($file_size>2097152){
 
 if(!isset($errors)){
     move_uploaded_file($file_tmp, "../../images/".$file_name); 
-    $query = "INSERT INTO product (name, image, description, price, quantity, is_published, user_id, is_premium, comp_id) VALUES ('$name', '$file_name', '$desc', $price, $quantity, $isPublished, $user_id, $isPremium, $compid)";
+    $query = "INSERT INTO product (name, image, description, price, quantity, is_published, user_id, comp_id) VALUES ('$name', '$file_name', '$desc', $price, $quantity, $isPublished, $user_id,  $compid)";
   $result=  mysqli_query($con, $query) or die(mysqli_error($con));
     
 

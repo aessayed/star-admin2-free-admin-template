@@ -534,7 +534,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                   </div>
                   <input type="hidden" name="postId" value="<?php echo $data['id'] ?>">
                    <button type="submit" class="btn btn-primary me-2">Edit</button>
-                    <a href="view_product.php" class="btn btn-light">See all products</a>
+                    <a href="view_prod_admin.php" class="btn btn-light">See all products</a>
                   </form>
                  
                 </div>

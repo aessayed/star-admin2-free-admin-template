@@ -405,8 +405,8 @@
            <tbody>
              <tr>
                <td><img class=''  src='../../images/$row[image]' alt='product_image'></td>
-               <td><h5 class=''>$row[name]</h5></td>
-               <td><h6 class=''>$row[description]</h6></td>
+               <td><h5 class='' style='white-space: nowrap;width: 7rem;padding-top:1rem; overflow: auto;text-overflow: inherit;height:4rem'>$row[name]</h5></td>
+               <td><h6 class='' style='white-space: nowrap;width: 7rem;padding-top:1rem;overflow: auto;text-overflow: inherit;height:4rem'>$row[description]</h6></td>
                <td><p class=''>$row[quantity]</p></td>
                <td><p class=''>$row[price]$</p></td>
                <td><p class=''>$row1[name]</p></td>
@@ -424,5 +424,7 @@
          </table>";
         }
     ?>
+    <a href='basic_elements.php' class='btn btn-primary'>Add more products</a>
+    
 </div></div>
 </body>

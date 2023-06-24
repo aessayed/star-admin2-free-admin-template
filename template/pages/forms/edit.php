@@ -523,10 +523,6 @@ while ($row = mysqli_fetch_assoc($result)) {
                      <input type="checkbox" id="is_published" value="<?php echo $data['is_published']?>" name="is_published" >
                     </div>
                     <div class="form-check form-check-flat form-check-primary">
-                     <label for="is_premium">Is Premium</label>
-                     <input type="checkbox" id="is_premium" value="<?php echo $data['is_premium']?>" name="is_premium" >
-                    </div>
-                    <div class="form-check form-check-flat form-check-primary">
                       <label for="dropdown">Select the company</label>
                         <select id="dropdown" name="dropdown">
                          <?php foreach ($items as $index => $item): ?>

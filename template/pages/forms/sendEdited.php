@@ -7,7 +7,6 @@ include "../../config.php";
   $price = $_POST['price'];
   $quantity = $_POST['quantity'];
   $isPublished = isset($_POST['is_published']) ? 1 : 0;
-  $isPremium = isset($_POST['is_premium']) ? 1 : 0; 
   $compid = $_POST['dropdown'];
   $file_name= $_FILES['image']['name'];
   $file_size= $_FILES['image']['size'];
@@ -34,7 +33,7 @@ if($file_size>2097152){
 if(!isset($errors)){
     
     move_uploaded_file($file_tmp, "../../images/".$file_name); 
-    $query = "UPDATE product SET name='$name', image='$file_name', description='$desc', price=$price, quantity=$quantity, is_published=$isPublished, is_premium=$isPremium, comp_id=$compid WHERE id=$id";
+    $query = "UPDATE product SET name='$name', image='$file_name', description='$desc', price=$price, quantity=$quantity, is_published=$isPublished, comp_id=$compid WHERE id=$id";
     $result=  mysqli_query($con, $query) or die(mysqli_error($con));
     
 
@@ -49,5 +48,5 @@ if(!isset($errors)){
   }
 
 
-  header("Location: view_product.php");
+  header("Location: view_prod_admin.php");
 ?>

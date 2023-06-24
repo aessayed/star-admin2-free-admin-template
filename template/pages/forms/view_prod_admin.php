@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="../../vendors/typicons/typicons.css">
   <link rel="stylesheet" href="../../vendors/simple-line-icons/css/simple-line-icons.css">
   <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
-  <!-- endinject -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Plugin css for this page -->
   <link rel="stylesheet" href="../../vendors/select2/select2.min.css">
   <link rel="stylesheet" href="../../vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
@@ -384,7 +384,44 @@
         $query = "SELECT * from product";
         $result = mysqli_query($con,$query);
         while($row = mysqli_fetch_array($result)){
-          
+           $qry = "SELECT name FROM company Where id = $row[comp_id]";
+           $res = mysqli_query($con,$qry);
+           $row1 = mysqli_fetch_array($res);
+           $showButton = ($row['is_published'] == 0);  
+           echo" <table class='table'>
+           <thead>
+             <tr>
+               <th scope='col'>Image</th>
+               <th scope='col'>Name</th>
+               <th scope='col'>Description</th>
+               <th scope='col'>Price</th>
+               <th scope='col'>Quantity</th>
+               <th scope='col'>Company</th>
+               <th scope='col'>Edit</th>
+               <th scope='col'>Delete</th>
+               <th scope='col'>Publish</th>
+             </tr>
+           </thead>
+           <tbody>
+             <tr>
+               <td><img class=''  src='../../images/$row[image]' alt='product_image'></td>
+               <td><h5 class=''>$row[name]</h5></td>
+               <td><h6 class=''>$row[description]</h6></td>
+               <td><p class=''>$row[quantity]</p></td>
+               <td><p class=''>$row[price]$</p></td>
+               <td><p class=''>$row1[name]</p></td>
+               <td><a href='edit.php? id=$row[id]'><i class='fa-sharp fa-regular fa-pen-to-square'></i></a></td>
+               <td><a href='delete.php? id=$row[id]'><i class='fa-solid fa-trash'></i></a></td>";
+               if (!$showButton) {
+                echo "<td><a href='unpublish.php? id=$row[id]'name ='is_published'><i class='fa-solid fa-minus'></i></a></td>";
+              }               
+               if ($showButton) {
+                echo "<td><a href='publish.php? id=$row[id]'name ='is_published'><i class='fa-sharp fa-solid fa-plus'></i></a></td>";
+              }
+             echo"</tr>
+             
+           </tbody>
+         </table>";
         }
     ?>
 </div></div>

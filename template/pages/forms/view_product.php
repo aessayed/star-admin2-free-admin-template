@@ -395,7 +395,6 @@
                  <p class='card-text'>Quantity : $row[quantity]</p>
                  <p class='card-text'>Price : $row[price]$</p>
                  <p class='card-text'>Published : $row[is_premium]</p>
-                 <p class='card-text'>Premium : $row[is_published]</p>
                  <a href='edit.php? id=$row[id]' class='btn btn-primary'>Edit</a>
                  <a href='delete.php? id=$row[id]' class='btn btn-danger'>Delete</a>
                  ";

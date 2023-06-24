@@ -1,0 +1,136 @@
+a {
+    text-decoration: none !important;
+
+}
+/*brands section*/
+.row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .hovercolor {
+    filter: grayscale(100%);
+  }
+  
+  .hovercolor:hover {
+    filter: grayscale(0);
+  }
+  .small-container {
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .col-sm-3 img {
+    width: 100%;
+  }
+/*testimo section*/
+  .color {
+    color: #eb455f !important;
+  }
+  .testimo {
+    transition: 0.2s ease !important;
+  }
+  .testimo:hover {
+    transform: translate(0, -15px) !important;
+  }
+  
+/*buy product*/
+
+  .content {
+    width: 20%;
+    margin: 15px;
+    box-sizing: border-box;
+    float: left;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+    padding-top: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    transition: 0.4s;
+    background: #f2f2f2;
+  }
+  .content:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    transform: translate(0px, -8px);
+  }
+  .imgbuy {
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+  }
+  .imgbuyp {
+    text-align: center;
+    color: #b2bec3;
+    padding-top: 0 8px;
+  }
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+  }
+
+
+  /*lux product*/
+
+
+  
+
+
+  
+  
+  
+  
+  
+
+  .small-container-lux {
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-top: 7rem;
+  }
+  
+ 
+  .title::after {
+    content: "";
+    background: #eb455f;
+    width: 80px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  h4 {
+    color: #555;
+    font-weight: normal;
+  }
+  
+  .rating {
+    color: #ff523b;
+  }
+  
+  .important {
+    transform: none !important;
+  }
+  .inner {
+    overflow: hidden !important;
+  }
+  .inner img {
+    transition: all 1s ease !important;
+  }
+  .inner:hover img {
+    transform: scale(1.1) !important;
+  }
+  
+
+ 

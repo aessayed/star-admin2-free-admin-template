@@ -18,7 +18,7 @@
   <div class="header">
     <div class="navbar">
       <div class="logo">
-        <img id="logo" src="imgs/logo.png" width="175px" />
+        <img id="logo" src="img/logo.png" width="175px" />
       </div>
       <div class="nav2">
         <nav>

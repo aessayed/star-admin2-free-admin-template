@@ -381,50 +381,38 @@
       <div class="row col-12">
     <?php
         include "../../config.php";
-        $query = "SELECT * from product";
+        $query = "SELECT * from user WHERE role=1";
         $result = mysqli_query($con,$query);
         while($row = mysqli_fetch_array($result)){
-           $qry = "SELECT name FROM company Where id = $row[comp_id]";
-           $res = mysqli_query($con,$qry);
-           $row1 = mysqli_fetch_array($res);
-           $showButton = ($row['is_published'] == 0);  
            echo" <table class='table'>
            <thead>
              <tr>
                <th scope='col'>Image</th>
                <th scope='col'>Name</th>
-               <th scope='col'>Description</th>
-               <th scope='col'>Price</th>
-               <th scope='col'>Quantity</th>
-               <th scope='col'>Company</th>
-               <th scope='col'>Edit</th>
-               <th scope='col'>Delete</th>
-               <th scope='col'>Publish</th>
+               <th scope='col'>email</th>
+               <th scope='col'>Role</th>
+               <th scope='col'>gender</th>
+               <th scope='col'>Accept</th>
+               <th scope='col'>Don't Accept</th>
              </tr>
            </thead>
            <tbody>
              <tr>
                <td><img class=''  src='../../images/$row[image]' alt='product_image'></td>
                <td><h5 class='' style='white-space: nowrap;width: 7rem;padding-top:1rem; overflow: auto;text-overflow: inherit;height:4rem'>$row[name]</h5></td>
-               <td><h6 class='' style='white-space: nowrap;width: 7rem;padding-top:1rem;overflow: auto;text-overflow: inherit;height:4rem'>$row[description]</h6></td>
-               <td><p class=''>$row[quantity]</p></td>
-               <td><p class=''>$row[price]$</p></td>
-               <td><p class=''>$row1[name]</p></td>
-               <td><a href='edit.php? id=$row[id]'><i class='icon-md fa-sharp fa-regular fa-pen-to-square'></i></a></td>
-               <td><a href='delete.php? id=$row[id]'><i class='icon-md fa-solid fa-trash'></i></a></td>";
-               if (!$showButton) {
-                echo "<td><a href='unpublish.php? id=$row[id]'name ='is_published'><i class='icon-md fa-solid fa-minus'></i></a></td>";
-              }               
-               if ($showButton) {
-                echo "<td><a href='publish.php? id=$row[id]'name ='is_published'><i class='fa-sharp icon-md fa-solid fa-plus'></i></a></td>";
-              }
+               <td><p class=''>$row[email]</p></td>
+               <td><p class=''>I need to be a admin-user</p></td>
+               <td><p class=''>$row[gender]</p></td>
+               <td><a href='accept_users_action.php? id=$row[id]'><i class='icon-md fa-solid fa-plus'></i></a></td>
+               <td><a href='unaccept_users_action.php? id=$row[id]'><i class='icon-md fa-solid fa-circle-xmark'></i></a></td>";
+               
              echo"</tr>
              
            </tbody>
          </table>";
         }
     ?>
-    <a href='basic_elements.php' class='btn btn-primary'>Add more products</a>
+    <a href='view_users.php' class='btn btn-primary'>View Users</a>
     
 </div></div>
 </body>

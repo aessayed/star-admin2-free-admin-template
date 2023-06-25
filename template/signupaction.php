@@ -25,7 +25,7 @@ include('config.php');
     if(!isset($errors)){
         move_uploaded_file($file_tmp, "images/".$file_name);
     
-        $query = "INSERT INTO user(name, email, password, role ,image, gender, is_premium) VALUES ('$name', '$email', '$password',2, '$file_name','$gender', 0)";
+        $query = "INSERT INTO user(name, email, password, image, gender) VALUES ('$name', '$email', '$password','$file_name','$gender')";
         $result=  mysqli_query($con, $query) or die(mysqli_error($con)); 
    
         if ($result) {

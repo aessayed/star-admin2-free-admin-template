@@ -384,7 +384,7 @@
         $query = "SELECT * from product";
         $result = mysqli_query($con,$query);
         while($row = mysqli_fetch_array($result)){
-          $showButton = ($row['is_published'] != 0);  
+          $showButton = ($row['is_published'] == 0);  
           echo"
             <div class='container' style='width:20rem;'>               
             <div class='card mt-3'>

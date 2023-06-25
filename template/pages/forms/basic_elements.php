@@ -519,10 +519,6 @@ while ($row = mysqli_fetch_assoc($result)) {
                      <input type="checkbox" id="is_published" name="is_published" >
                     </div>
                     <div class="form-check form-check-flat form-check-primary">
-                     <label for="is_premium">Is Premium</label>
-                     <input type="checkbox" id="is_premium" name="is_premium" >
-                    </div>
-                    <div class="form-check form-check-flat form-check-primary">
                       <label for="dropdown">Select the company</label>
                         <select id="dropdown" name="dropdown">
                          <?php foreach ($items as $index => $item): ?>
@@ -532,8 +528,12 @@ while ($row = mysqli_fetch_assoc($result)) {
                          <?php endforeach; ?>
                         </select>
                   </div>
+                  <div class="text-center" style="display:flex;">
                     <button type="submit" class="btn btn-primary me-2">Add</button>
-                    <button class="btn btn-light">Cancel</button>
+                    <button class="btn btn-light" onclick="location.reload()" style="margin-left:1rem">Cancel</button>
+                    <a href='view_prod_admin.php' style="width:10rem;margin-left:3rem" class='btn btn-primary'>View all products</a>
+                    <a href='view_users.php' style="width:10rem;margin-left:3rem" class='btn btn-primary'>Users</a>
+                  </div>
                   </form>
                  
                 </div>
@@ -578,5 +578,4 @@ while ($row = mysqli_fetch_assoc($result)) {
   <script src="../../js/select2.js"></script>
   <!-- End custom js for this page-->
 </body>
-
 </html>

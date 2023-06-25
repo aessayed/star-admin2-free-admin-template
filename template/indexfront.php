@@ -1,3 +1,27 @@
+<?php
+
+@include 'config.php';
+
+if(isset($_POST['add_to_cart'])){
+
+
+   $product_name = $_POST['name'];
+   $product_price = $_POST['price'];
+   $product_image = $_POST['image'];
+   $product_quantity = 1;
+
+   $select_cart = mysqli_query($con, "SELECT * FROM cart WHERE name = '$product_name'");
+
+   if(mysqli_num_rows($select_cart) > 0){
+      $message[] = 'product already added to cart';
+   }else{
+      $insert_product = mysqli_query($con, "INSERT INTO cart(name, price, image, quantity) VALUES('$product_name', '$product_price', '$product_image', '$product_quantity')");
+      $message[] = 'product added to cart succesfully';
+   }
+
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +33,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="cssfront/style.css" />
+    <link rel="stylesheet" href="cssfront/cartstyle.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
@@ -16,7 +41,57 @@
 <body>
 
 
+<div class="contents " >
+      <div class="row col-12">
+      <?php
 
+if(isset($message)){
+   foreach($message as $message){
+      echo '<div class="message"><span>'.$message.'</span> <i class="fas fa-times" onclick="this.parentElement.style.display = `none`;"></i> </div>';
+   };
+};
+
+?>
+
+
+<div class="container">
+
+<section class="products">
+
+   <h1 class="heading">latest products</h1>
+
+   <div class="box-container">
+
+      <?php
+      
+      $select_products = mysqli_query($con, "SELECT * FROM product LIMIT 4");
+      if(mysqli_num_rows($select_products) > 0){
+         while($fetch_product = mysqli_fetch_assoc($select_products)){
+      ?>
+
+      <form action="" method="post">
+         <div class="box">
+         <img class='card-img-top' style='height:16rem'  src='images/<?php echo $fetch_product['image']; ?>' alt='product_image'>
+            <h3><?php echo $fetch_product['name']; ?></h3>
+            <div class="price">$<?php echo $fetch_product['price']; ?>/-</div>
+            <input type="hidden" name="name" value="<?php echo $fetch_product['name']; ?>">
+            <input type="hidden" name="price" value="<?php echo $fetch_product['price']; ?>">
+            <input type="hidden" name="image" value="<?php echo $fetch_product['image']; ?>">
+            <input type="submit" class="btn" value="add to cart" name="add_to_cart">
+         </div>
+      </form>
+
+      <?php
+         };
+      };
+      ?>
+
+   </div>
+
+</section>
+
+</div>
+</div></div>
 
   <!--lux products -->
 
@@ -57,7 +132,7 @@
   </div>
 
 
-
+  <script src="js/scriptfront.js"></script>
 
   <!--  buy product -->
 

@@ -56,7 +56,7 @@ if(isset($_POST['add_to_cart'])){
           <br />
         </h1>
         <p>It's all about time don't <br />spend it, Go and choose one.</p>
-        <a href="#explore" class="btn text-white"> <b>Explore Now</b> </a>
+        <a href="new.php" class="btn text-white"> <b>Explore Now</b> </a>
       </div>
       <div class="col-sm-4 important">
         <img src="img/homepage.png" />
@@ -89,7 +89,7 @@ if(isset($message)){
 
       <?php
       
-      $select_products = mysqli_query($con, "SELECT * FROM product LIMIT 6");
+      $select_products = mysqli_query($con, "SELECT * FROM product LIMIT 3");
       if(mysqli_num_rows($select_products) > 0){
          while($fetch_product = mysqli_fetch_assoc($select_products)){
          
@@ -99,12 +99,13 @@ if(isset($message)){
          <div class="box">
          <img class='card-img-top' style='height:16rem'  src='images/<?php echo $fetch_product['image']; ?>' alt='product_image'>
             <h3><?php echo $fetch_product['name']; ?></h3>
-            <div class="price">$<?php echo $fetch_product['price']; ?>/-</div>
+            <div class="price">$<?php echo $fetch_product['price'] ?></div>
             <input type="hidden" name="id" value="<?php echo $fetch_product['id']; ?>">
 
             <input type="hidden" name="name" value="<?php echo $fetch_product['name']; ?>">
             <input type="hidden" name="price" value="<?php echo $fetch_product['price']; ?>">
             <input type="hidden" name="image" value="<?php echo $fetch_product['image']; ?>">
+            <a href="detailedproduct.php?id=<?php echo $fetch_product['id']; ?>">View Details</a>
             <input type="submit" class="btn" value="add to cart" name="add_to_cart">
          </div>
       </form>
@@ -115,7 +116,7 @@ if(isset($message)){
       ?>
 
    </div>
-
+   <a href="new.php" class="btn text-white" style="margin :24px ; padding : 20px"> <b>See more</b> </a>
 </section>
 
 </div>

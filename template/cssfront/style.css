@@ -152,6 +152,46 @@ p {
 
 
 
+
+
+.pagination {
+  display: flex !important; 
+  justify-content: center !important;
+  margin-top: 20px !important;
+}
+
+.pagination a {
+  display: inline-block !important;
+  padding: 8px 16px !important;
+  margin: 0 4px !important;
+  color: #333 !important;
+  background-color: #f0f0f0 !important;
+  text-decoration: none !important;
+  border-radius: 4px !important;
+  transition: background-color 0.3s ease !important;
+}
+
+.pagination a:hover {
+  background-color: #ccc !important;
+}
+
+.pagination a.active {
+  background-color: #333 !important;
+  color: #fff !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*brands section*/
 .row {
     display: flex;

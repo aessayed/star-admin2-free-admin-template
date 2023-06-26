@@ -1,7 +1,17 @@
 <?php
 
 include 'config.php';
-
+if(isset($_POST['addfromdetailed'])){
+   $img = $_POST['image'];
+   $name=$_POST['name'];
+   $price = $_POST['price'];
+   $qty = $_POST['quantity'];
+   $id = $_POST['product_id'];
+   $qry = mysqli_query($con, "INSERT into cart (prod_id,name,price,image,quantity) values ('$id','$name','$price','$img','$qty')");
+   if($qry){
+      header('location:cart.php');
+   };
+};
 if(isset($_POST['update_update_btn'])){
    $update_value = $_POST['update_quantity'];
    $update_id = $_POST['update_quantity_id'];
@@ -72,7 +82,7 @@ if(isset($_GET['delete_all'])){
          <tr>
             <td><img src="images/<?php echo $fetch_cart['image']; ?>" height="100" alt=""></td>
             <td><?php echo $fetch_cart['name']; ?></td>
-            <td>$<?php echo number_format($fetch_cart['price']); ?>/-</td>
+            <td>$<?php echo number_format($fetch_cart['price']); ?></td>
             <td>
                <form action="" method="post">
                   <input type="hidden" name="update_quantity_id"  value="<?php echo $fetch_cart['id']; ?>" >
@@ -80,7 +90,7 @@ if(isset($_GET['delete_all'])){
                   <input type="submit" value="update" name="update_update_btn">
                </form>   
             </td>
-            <td>$<?php echo $sub_total = number_format($fetch_cart['price'] * $fetch_cart['quantity']); ?>/-</td>
+            <td>$<?php echo $sub_total = number_format($fetch_cart['price'] * $fetch_cart['quantity']); ?></td>
             <td><a href="cart.php?remove=<?php echo $fetch_cart['id']; ?>" onclick="return confirm('remove item from cart?')" class="delete-btn"> <i class="fas fa-trash"></i> remove</a></td>
          </tr>
          <?php
@@ -91,7 +101,7 @@ if(isset($_GET['delete_all'])){
          <tr class="table-bottom">
             <td><a href="indexfront.php" class="option-btn" style="margin-top: 0;">continue shopping</a></td>
             <td colspan="3">grand total</td>
-            <td>$<?php echo $grand_total; ?>/-</td>
+            <td>$<?php echo $grand_total; ?></td>
             <td><a href="cart.php?delete_all" onclick="return confirm('are you sure you want to delete all?');" class="delete-btn"> <i class="fas fa-trash"></i> delete all </a></td>
          </tr>
 

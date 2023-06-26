@@ -103,14 +103,16 @@
       </div>
       
       
-      <!-- partial -->
-      <div class="main-panel" style="width: 100%;">
-        <div class="content-wrapper" style="background-color:lightgray;width: 100%;">
-          <div class="row">
-            <div class="col-sm-12">
-            <?php include 'dashboard.php'; ?>
+      
+      <div class='main-panel' style='width: 100%;'>
+    <div class='content-wrapper' style='background-color: lightgray; width: 100%;'>
+        <div class='row'>
+            <div class='col-sm-12'>
+                <?php include 'dashboard.php'; ?>
             </div>
-            <a href='./pages/forms/basic_elements.php' class='btn mt-3 btn-primary' style="width: 10rem;margin-left: 30.2rem;">Add products</a>
+            <a href='./pages/forms/basic_elements.php' class='btn mt-3 btn-primary' style='width: 10rem;margin-left: 30.2rem;'>Add products</a>
+        
+
     
    <?php 
     if($super_admin==2){

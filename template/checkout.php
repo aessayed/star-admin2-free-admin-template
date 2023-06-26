@@ -26,7 +26,15 @@ if(isset($_POST['order_btn'])){
    $total_product = implode(', ',$product_name);
    $qry = "INSERT INTO `order` (name, user_id, number, email, method, street, city,  country, total_products, total_price) VALUES ('$name', $uid, $number,'$email','$method','$street','$city','$country','$total_product',$price_total)";
    $detail_query = mysqli_query($con,$qry);
+   $delete_query = mysqli_query($con, "DELETE FROM cart");
 
+   if ($delete_query) {
+       // Deletion successful
+       echo "All items have been removed from the cart.";
+   } else {
+       // Deletion failed
+       echo "Failed to remove items from the cart.";
+   }
    if($cart_query && $detail_query){
       echo "
       <div class='order-message-container'>

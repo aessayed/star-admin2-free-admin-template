@@ -28,10 +28,24 @@ if(isset($_GET['remove'])){
 };
 
 if(isset($_GET['delete_all'])){
-   mysqli_query($con, "DELETE FROM `cart`");
+   mysqli_query($con, "DELETE FROM  `cart`");
    header('location:cart.php');
 }
+session_start();
 
+
+if (isset($_POST['checkout'])) {
+   // Delete all rows from the cart table
+   $delete_query = mysqli_query($con, "DELETE * FROM cart");
+
+   if ($delete_query) {
+       // Deletion successful
+       echo "All items have been removed from the cart.";
+   } else {
+       // Deletion failed
+       echo "Failed to remove items from the cart.";
+   }
+}
 ?>
 
 <!DOCTYPE html>
@@ -111,7 +125,9 @@ if(isset($_GET['delete_all'])){
 
    <div class="checkout-btn">
    <?php if (isset($_SESSION['id'])): ?>
-      <a href="checkout.php" class="btn <?= ($grand_total > 1) ? '' : 'disabled'; ?>">Proceed to Checkout</a>
+      <form action="" method="POST">
+      <a type="submit" href="checkout.php" class="btn <?= ($grand_total > 1) ? '' : 'disabled'; ?>">Proceed to Checkout</a>
+      </form>
    <?php else: ?>
       <a href="login.php" class="btn">Login to Proceed</a>
    <?php endif; ?>

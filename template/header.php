@@ -86,7 +86,7 @@ body {
         <nav>
           <ul>
             
-            <li><a href="new.php" id="links">New</a></li>
+            <li><a href="new.php" id="links">Product</a></li>
             <li><a href="rolex.php" id="links">Rolex</a></li>
             <li><a href="about.php" id="links"> About</a></li>
             <li><a href="contactus.php" id="links">Contact Us</a></li>

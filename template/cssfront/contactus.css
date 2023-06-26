@@ -1,0 +1,67 @@
+.icon{
+ margin-right: 30px;
+ color: #2b3467 !important;
+}
+.comp p{
+    color: #2b3467 !important;
+}
+a{
+    display: flex !important;
+}
+#lp{
+    font-family: 'Garamond' !important;
+font-style: normal !important;
+font-weight: 400 !important;
+font-size: 20px !important;
+line-height: 22px !important;
+text-align: center !important;
+letter-spacing: 0.08em !important;
+}
+
+
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  input[type=text], select, textarea:hover{
+ border-color: #eb455f;
+  }
+  input[type=email], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  input[type=email], select, textarea:hover{
+    border-color: #eb455f;
+     }
+  
+  input[type=submit] {
+    background-color: #EB455F;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #ffc8d0;
+  }
+  
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }

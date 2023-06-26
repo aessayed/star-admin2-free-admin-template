@@ -37,8 +37,33 @@ if(isset($_POST['add_to_cart'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon"></head>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  
+  </head>
 <body>
+
+ <?php include 'header.php'; ?>
+
+<!--home screen -->
+
+<div class="row w-100">
+      <div class="col-sm-4 important">
+        <h1 style="color: #555; font-size: 45px">
+          <b>
+            Select Your <br />
+            <span style="color: #eb455f"> New </span> <br />Perfect Style
+          </b>
+          <br />
+        </h1>
+        <p>It's all about time don't <br />spend it, Go and choose one.</p>
+        <a href="#explore" class="btn text-white"> <b>Explore Now</b> </a>
+      </div>
+      <div class="col-sm-4 important">
+        <img src="img/homepage.png" />
+      </div>
+    </div>
+  </div>
+
 
 
 <div class="contents " >
@@ -64,7 +89,7 @@ if(isset($message)){
 
       <?php
       
-      $select_products = mysqli_query($con, "SELECT * FROM product LIMIT 4");
+      $select_products = mysqli_query($con, "SELECT * FROM product LIMIT 6");
       if(mysqli_num_rows($select_products) > 0){
          while($fetch_product = mysqli_fetch_assoc($select_products)){
       ?>

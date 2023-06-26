@@ -3,7 +3,8 @@
 <?php
 
 include "../../config.php";
-
+session_start();
+    $lid = $_SESSION['id'];
 
   $name = $_POST['name'];
   $desc = $_POST['description'];
@@ -11,7 +12,7 @@ include "../../config.php";
   $quantity = $_POST['quantity'];
   $isPublished = isset($_POST['is_published']) ? 1 : 0;
   $compid = $_POST['dropdown'];
-  $user_id = 1;
+  $user_id = $lid;
 $file_name= $_FILES['image']['name'];
 $file_size= $_FILES['image']['size'];
 $file_tmp= $_FILES['image']['tmp_name'];

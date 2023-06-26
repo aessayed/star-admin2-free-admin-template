@@ -4,7 +4,7 @@ include "../../config.php";
   $id = $_GET['id'];
 
 if(!isset($errors)){
-    $query = "UPDATE user SET acception=0   WHERE id=$id";
+    $query = "UPDATE user SET acception=0,role=0  WHERE id=$id";
     $result=  mysqli_query($con, $query) or die(mysqli_error($con));
     
 

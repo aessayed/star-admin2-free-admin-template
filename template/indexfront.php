@@ -9,13 +9,13 @@ if(isset($_POST['add_to_cart'])){
    $product_price = $_POST['price'];
    $product_image = $_POST['image'];
    $product_quantity = 1;
-
+   $prodid = $_POST['id'];
    $select_cart = mysqli_query($con, "SELECT * FROM cart WHERE name = '$product_name'");
-
+   
    if(mysqli_num_rows($select_cart) > 0){
       $message[] = 'product already added to cart';
    }else{
-      $insert_product = mysqli_query($con, "INSERT INTO cart(name, price, image, quantity) VALUES('$product_name', '$product_price', '$product_image', '$product_quantity')");
+      $insert_product = mysqli_query($con, "INSERT INTO cart(name, prod_id, price, image, quantity) VALUES('$product_name', $prodid, '$product_price', '$product_image', '$product_quantity')");
       $message[] = 'product added to cart succesfully';
    }
 
@@ -92,6 +92,7 @@ if(isset($message)){
       $select_products = mysqli_query($con, "SELECT * FROM product LIMIT 6");
       if(mysqli_num_rows($select_products) > 0){
          while($fetch_product = mysqli_fetch_assoc($select_products)){
+         
       ?>
 
       <form action="" method="post">
@@ -99,6 +100,8 @@ if(isset($message)){
          <img class='card-img-top' style='height:16rem'  src='images/<?php echo $fetch_product['image']; ?>' alt='product_image'>
             <h3><?php echo $fetch_product['name']; ?></h3>
             <div class="price">$<?php echo $fetch_product['price']; ?>/-</div>
+            <input type="hidden" name="id" value="<?php echo $fetch_product['id']; ?>">
+
             <input type="hidden" name="name" value="<?php echo $fetch_product['name']; ?>">
             <input type="hidden" name="price" value="<?php echo $fetch_product['price']; ?>">
             <input type="hidden" name="image" value="<?php echo $fetch_product['image']; ?>">

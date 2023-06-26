@@ -380,8 +380,10 @@
       <div class="contents " style="">
       <div class="row col-12">
     <?php
+    session_start();
+    $lid = $_SESSION['id'];
         include "../../config.php";
-        $query = "SELECT * from product";
+        $query = "SELECT * from product WHERE user_id = $lid";
         $result = mysqli_query($con,$query);
         while($row = mysqli_fetch_array($result)){
           $showButton = ($row['is_published'] == 0);  

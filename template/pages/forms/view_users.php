@@ -384,14 +384,15 @@
         $query = "SELECT * from user";
         $result = mysqli_query($con,$query);
         while($row = mysqli_fetch_array($result)){
+          
            echo" <table class='table'>
            <thead>
              <tr>
                <th scope='col'>Image</th>
                <th scope='col'>Name</th>
-               <th scope='col'>email</th>
+               <th scope='col'>Email</th>
                <th scope='col'>Role</th>
-               <th scope='col'>gender</th>
+               <th scope='col'>Gender</th>
                <th scope='col'>Delete</th>
              </tr>
            </thead>

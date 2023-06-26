@@ -66,6 +66,7 @@ if(isset($_GET['delete_all'])){
          $grand_total = 0;
          if(mysqli_num_rows($select_cart) > 0){
             while($fetch_cart = mysqli_fetch_assoc($select_cart)){
+            
          ?>
 
          <tr>
@@ -99,7 +100,7 @@ if(isset($_GET['delete_all'])){
    </table>
 
    <div class="checkout-btn">
-      <a href="checkout.php" class="btn <?= ($grand_total > 1)?'':'disabled'; ?>">procced to checkout</a>
+      <a href="checkout.php?" class="btn <?= ($grand_total > 1)?'':'disabled'; ?>">procced to checkout</a>
    </div>
 
 </section>

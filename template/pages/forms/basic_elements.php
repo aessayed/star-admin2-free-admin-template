@@ -381,116 +381,23 @@ while ($row = mysqli_fetch_assoc($result)) {
               </li>
             </ul>
           </div>
-          <!-- chat tab ends -->
+          <!-- chat tab ends -->  
         </div>
       </div>
       <!-- partial -->
       <!-- partial:../../partials/_sidebar.html -->
-      <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link" href="../../index.php">
-              <i class="mdi mdi-grid-large menu-icon"></i>
-              <span class="menu-title">Dashboard</span>
-            </a>
-          </li>
-          <li class="nav-item nav-category">UI Elements</li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <i class="menu-icon mdi mdi-floor-plan"></i>
-              <span class="menu-title">UI Elements</span>
-              <i class="menu-arrow"></i> 
-            </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Buttons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/dropdowns.html">Dropdowns</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Typography</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item nav-category">Forms and Datas</li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
-              <i class="menu-icon mdi mdi-card-text-outline"></i>
-              <span class="menu-title">Form elements</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="form-elements">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="../../pages/forms/basic_elements.html">Basic Elements</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
-              <i class="menu-icon mdi mdi-chart-line"></i>
-              <span class="menu-title">Charts</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="charts">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/charts/chartjs.html">ChartJs</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
-              <i class="menu-icon mdi mdi-table"></i>
-              <span class="menu-title">Tables</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="tables">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/tables/basic-table.html">Basic table</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
-              <i class="menu-icon mdi mdi-layers-outline"></i>
-              <span class="menu-title">Icons</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="icons">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/icons/mdi.html">Mdi icons</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item nav-category">pages</li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-              <i class="menu-icon mdi mdi-account-circle-outline"></i>
-              <span class="menu-title">User Pages</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="auth">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/login.html"> Login </a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item nav-category">help</li>
-          <li class="nav-item">
-            <a class="nav-link" href="http://bootstrapdash.com/demo/star-admin2-free/docs/documentation.html">
-              <i class="menu-icon mdi mdi-file-document"></i>
-              <span class="menu-title">Documentation</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <!-- partial -->
-      <div class="main-panel">        
-        <div class="content-wrapper">
-          <div class="row">
-            <div class="col-md-6 grid-margin stretch-card" style="margin-left:12rem;">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Add Product</h4>
-                  <p class="card-description">
-                    Adding products
-                  </p>
+     
+        <!-- partial -->
+        <div class="main-panel" style="width:100%">        
+          <div class="content-wrapper" >
+            <div class="row">
+              <div class="col-md-6 grid-margin stretch-card" style="margin-left:23rem; width:32rem">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Add Product</h4>
+                    <p class="card-description">
+                      Adding products
+                    </p>
                   <form class="forms-sample" action="add_product_action.php" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                       <label for="exampleInputUsername1">Name</label>
@@ -519,7 +426,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                      <input type="checkbox" id="is_published" name="is_published" >
                     </div>
                     <div class="form-check form-check-flat form-check-primary">
-                      <label for="dropdown">Select the company</label>
+                      <label for="dropdown">Select the company</label><a href='../../index.php' style="width:10rem;margin-left:3rem" class='btn btn-primary'>Add Company</a>
                         <select id="dropdown" name="dropdown">
                          <?php foreach ($items as $index => $item): ?>
                          <option value="<?php echo $item['id']; ?>">
@@ -532,16 +439,15 @@ while ($row = mysqli_fetch_assoc($result)) {
                     <button type="submit" class="btn btn-primary me-2">Add</button>
                     <button class="btn btn-light" onclick="location.reload()" style="margin-left:1rem">Cancel</button>
                     <a href='view_prod_admin.php' style="width:10rem;margin-left:3rem" class='btn btn-primary'>View all products</a>
-                    <a href='view_users.php' style="width:10rem;margin-left:3rem" class='btn btn-primary'>Users</a>
+                    
                   </div>
                   </form>
-                 
                 </div>
               </div>
             </div>
-            
           </div>
         </div>
+
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer.html -->
         <footer class="footer">

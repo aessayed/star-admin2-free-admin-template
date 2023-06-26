@@ -36,6 +36,17 @@
           <label class="form-check-label" for="female">Female</label>
         </div>
       </div>
+      <div class="form-group">
+        <label>Do you want to be:</label><br>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="role" id="role" value="user" required>
+          <label class="form-check-label" for="male">User</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="role" id="role" value="Admin user" required>
+          <label class="form-check-label" for="female">Admin User</label>
+        </div>
+      </div>
     
       <button type="submit" class="btn btn-primary">Signup</button>
     </form>

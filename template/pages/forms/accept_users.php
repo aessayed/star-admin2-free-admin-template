@@ -390,7 +390,7 @@
                <th scope='col'>Image</th>
                <th scope='col'>Name</th>
                <th scope='col'>email</th>
-               <th scope='col'>Role</th>
+               <th scope='col'>Status</th>
                <th scope='col'>gender</th>
                <th scope='col'>Accept</th>
                <th scope='col'>Don't Accept</th>
@@ -400,9 +400,14 @@
              <tr>
                <td><img class=''  src='../../images/$row[image]' alt='product_image'></td>
                <td><h5 class='' style='white-space: nowrap;width: 7rem;padding-top:1rem; overflow: auto;text-overflow: inherit;height:4rem'>$row[name]</h5></td>
-               <td><p class=''>$row[email]</p></td>
-               <td><p class=''>I need to be a admin-user</p></td>
-               <td><p class=''>$row[gender]</p></td>
+               <td><p class=''>$row[email]</p></td>";
+               if($row['acception']==1){
+                echo"<td><p class=''>User already accepted as admin-user</p></td>";
+               }
+               if($row['acception']==0){
+               echo "<td><p class=''>I need to be a admin-user</p></td>";
+               }
+               echo"<td><p class=''>$row[gender]</p></td>
                <td><a href='accept_users_action.php? id=$row[id]'><i class='icon-md fa-solid fa-plus'></i></a></td>
                <td><a href='unaccept_users_action.php? id=$row[id]'><i class='icon-md fa-solid fa-circle-xmark'></i></a></td>";
                

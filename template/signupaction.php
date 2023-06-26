@@ -5,10 +5,14 @@ include('config.php');
     $email = $_POST['email'];
     $gender = $_POST['gender'];
     $password =$_POST['password'];
-
+    $role = $_POST['role'];
     $file_name=$_FILES['image']['name'];
-
-
+    if($role=='user'){
+      $r = 0;
+    }
+    if($role=='Admin user'){
+      $r = 1;
+    }
     $file_name=$_FILES['image']['name'];
     $file_size=$_FILES['image']['size'];
     $file_tmp=$_FILES['image']['tmp_name'];
@@ -25,7 +29,7 @@ include('config.php');
     if(!isset($errors)){
         move_uploaded_file($file_tmp, "images/".$file_name);
     
-        $query = "INSERT INTO user(name, email, password, image, gender) VALUES ('$name', '$email', '$password','$file_name','$gender')";
+        $query = "INSERT INTO user(name, email, password, role, image, gender) VALUES ('$name', '$email', '$password',$r,'$file_name','$gender')";
         $result=  mysqli_query($con, $query) or die(mysqli_error($con)); 
    
         if ($result) {

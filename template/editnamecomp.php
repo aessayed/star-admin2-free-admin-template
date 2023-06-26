@@ -19,8 +19,8 @@
   
       <div class="card" style="margin: 12rem">
   <div class="card-body">
-    <h5 class="card-title">Card Title</h5>
-    <p class="card-text">Some example text.</p>
+    <h5 class="card-title">Change the company name</h5>
+    <p class="card-text"></p>
     <input type="text" name="id" class="form-control" id="name" hidden placeholder="company" value="<?php echo $id; ?>">
     <input type="text" name="companyname" class="form-control" id="name" placeholder="company">
     <div class="d-flex justify-content-between mt-3">

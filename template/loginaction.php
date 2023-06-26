@@ -1,6 +1,6 @@
 <?php
 include('config.php');
-
+session_start();
 if (isset($_POST['login'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -12,12 +12,12 @@ if (isset($_POST['login'])) {
 
     if ($row) {
         // Login successful, store user session or redirect to dashboard
-        session_start();
+    
         $_SESSION['id'] = $row['id'];
         $_SESSION['name'] = $row['name'];
         $_SESSION['image'] = $row['image'];
 
-     header('Location: index.php');
+     header('Location: indexfront.php');
         exit();
     } else {
         // Login failed, display error message

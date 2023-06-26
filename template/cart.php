@@ -110,8 +110,12 @@ if(isset($_GET['delete_all'])){
    </table>
 
    <div class="checkout-btn">
-      <a href="checkout.php?" class="btn <?= ($grand_total > 1)?'':'disabled'; ?>">procced to checkout</a>
-   </div>
+   <?php if (isset($_SESSION['id'])): ?>
+      <a href="checkout.php" class="btn <?= ($grand_total > 1) ? '' : 'disabled'; ?>">Proceed to Checkout</a>
+   <?php else: ?>
+      <a href="login.php" class="btn">Login to Proceed</a>
+   <?php endif; ?>
+</div>
 
 </section>
 

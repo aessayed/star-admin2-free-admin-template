@@ -260,6 +260,7 @@
       <div class="row col-12">
     <?php
         include "../../config.php";
+        if(isset($_SESSION['id'])){
         if($super_admin==2){
           $query = "SELECT * from product";
           $result = mysqli_query($con,$query);
@@ -351,9 +352,12 @@
              
            </tbody>
          </table>";
-        }}
+          }}}
+    ?><?php
+    if(isset($_SESSION['id'])){ 
+      echo"<a href='basic_elements.php' class='btn btn-primary'>Add more products</a>";}
     ?>
-    <a href='basic_elements.php' class='btn btn-primary'>Add more products</a>
+    
     
    <?php 
     if($super_admin==2){

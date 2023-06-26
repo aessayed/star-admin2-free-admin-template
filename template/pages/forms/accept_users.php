@@ -262,6 +262,7 @@
         include "../../config.php";
         $query = "SELECT * from user WHERE role=1";
         $result = mysqli_query($con,$query);
+        if(isset($_SESSION['id'])){
         while($row = mysqli_fetch_array($result)){
            echo" <table class='table'>
            <thead>
@@ -294,11 +295,12 @@
              
            </tbody>
          </table>";
-        }
-    ?>
+        }}
+    
+    if(isset($_SESSION['id'])){ echo"
     <a href='view_users.php' class='btn btn-primary'>View Users</a>
-    <a href='basic_elements.php' style="width:10rem;margin-left:42.25%;margin-top:0.2rem" class='btn btn-primary'>Add products</a>
-    <a href='view_product.php' style='width:10rem;margin-left:0.1rem;margin-top:0.2rem' class='btn btn-primary'>View All Products</a>
+    <a href='basic_elements.php' style='width:10rem;margin-left:42.25%;margin-top:0.2rem' class='btn btn-primary'>Add products</a>
+    <a href='view_product.php' style='width:10rem;margin-left:0.1rem;margin-top:0.2rem' class='btn btn-primary'>View All Products</a>";}?>
         </div>
         <div style="padding-bottom: 2rem;">
           <a href='../../indexfront.php' style='width:10rem;margin-left:41%;margin-top:0.2rem;background-color: #eb455f;' class='btn'>Return to home</a>

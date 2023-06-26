@@ -318,7 +318,8 @@ while ($row = mysqli_fetch_assoc($result)) {
                         </select>
                   </div>
                   <div class="text-center" style="display:flex;">
-                    <button type="submit" class="btn btn-primary me-2">Send</button>
+                  <?php if(isset($_SESSION['id'])){ echo"
+                    <button type='submit' class='btn btn-primary me-2'>Send</button>";}?>
                     <button class="btn btn-light" onclick="location.reload()" style="margin-left:1rem">Cancel</button>
 
                   </div>
@@ -327,18 +328,20 @@ while ($row = mysqli_fetch_assoc($result)) {
               </div>
             </div>
           </div>
-          <a href='view_prod_admin.php' style="width:10rem;margin-left:23rem" class='btn btn-primary'>View all products</a>
+          <?php if(isset($_SESSION['id'])){ echo"
+          <a href='view_prod_admin.php' style='width:10rem;margin-left:23rem' class='btn btn-primary'>View all products</a>";}?>
    <?php 
+   if(isset($_SESSION['id'])){
     if($super_admin==2){
       echo"
       <a href='view_users.php' style='width:10rem;margin-left:0.1rem' class='btn btn-primary'>View all users</a>
       <a href='accept_users.php' style='width:10rem;margin-left:0.1rem' class='btn btn-primary'>Accept users</a>
       ";
-    }
+    }}
    ?>
         </div>
         <div style="background-color: #F4F5F7;">
-          <a href='../../indexfront.php' style='width:10rem;margin-left:26.4rem' class='btn btn-primary'>Return to home</a>
+          <a href='../../indexfront.php' style='width:10rem;margin-left:26.4rem;background-color: #eb455f;' class='btn btn-primary'>Return to home</a>
         </div>
 
         <!-- content-wrapper ends -->

@@ -105,6 +105,7 @@ if(isset($message)){
             <input type="hidden" name="name" value="<?php echo $fetch_product['name']; ?>">
             <input type="hidden" name="price" value="<?php echo $fetch_product['price']; ?>">
             <input type="hidden" name="image" value="<?php echo $fetch_product['image']; ?>">
+            <a href="detailedproduct.php?id=<?php echo $fetch_product['id']; ?>">View Details</a>
             <input type="submit" class="btn" value="add to cart" name="add_to_cart">
          </div>
       </form>

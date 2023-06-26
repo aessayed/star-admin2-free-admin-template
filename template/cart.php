@@ -1,7 +1,17 @@
 <?php
 
 include 'config.php';
-
+if(isset($_POST['addfromdetailed'])){
+   $img = $_POST['image'];
+   $name=$_POST['name'];
+   $price = $_POST['price'];
+   $qty = $_POST['quantity'];
+   $id = $_POST['product_id'];
+   $qry = mysqli_query($con, "INSERT into cart (prod_id,name,price,image,quantity) values ('$id','$name','$price','$img','$qty')");
+   if($qry){
+      header('location:cart.php');
+   };
+};
 if(isset($_POST['update_update_btn'])){
    $update_value = $_POST['update_quantity'];
    $update_id = $_POST['update_quantity_id'];

@@ -94,7 +94,7 @@ if(isset($message)){
 
       <?php
       
-      $select_products = mysqli_query($con, "SELECT * FROM product LIMIT $startFrom, $itemsPerPage ");
+      $select_products = mysqli_query($con, "SELECT * FROM product WHERE is_published = 1 LIMIT $startFrom, $itemsPerPage ");
       if(mysqli_num_rows($select_products) > 0){
          while($fetch_product = mysqli_fetch_assoc($select_products)){
          

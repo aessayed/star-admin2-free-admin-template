@@ -10,6 +10,7 @@ if(isset($_POST['add_to_cart'])){
    $product_image = $_POST['image'];
    $product_quantity = 1;
    $prodid = $_POST['id'];
+
    $select_cart = mysqli_query($con, "SELECT * FROM cart WHERE name = '$product_name'");
    
    if(mysqli_num_rows($select_cart) > 0){
@@ -89,7 +90,7 @@ if(isset($message)){
 
       <?php
       
-      $select_products = mysqli_query($con, "SELECT * FROM product LIMIT 3");
+      $select_products = mysqli_query($con, "SELECT * FROM product WHERE is_published = 1 LIMIT 3");
       if(mysqli_num_rows($select_products) > 0){
          while($fetch_product = mysqli_fetch_assoc($select_products)){
          

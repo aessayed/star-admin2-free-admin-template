@@ -45,19 +45,13 @@
                 <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn"  type="submit" name="login">SIGN IN</button>
                   
                 </div>
-                <div class="my-2 d-flex justify-content-between align-items-center">
-                  <div class="form-check">
-                    <label class="form-check-label text-muted">
-                      <input type="checkbox" class="form-check-input">
-                      Keep me signed in
-                    </label>
-                  </div>
-                  <a href="#" class="auth-link text-black">Forgot password?</a>
-                </div>
-                <div class="mb-2">
-                  <button type="button" class="btn btn-block btn-facebook auth-form-btn">
-                    <i class="ti-facebook me-2"></i>Connect using facebook
+                
+                <div class="mt-2">
+                  <a href="./indexfront.php">
+                  <button type="button" class="btn  btn-primary">
+                    Continue as guest
                   </button>
+                  </a>
                 </div>
                 <div class="text-center mt-4 fw-light">
                   Don't have an account? <a href="signup.php" class="text-primary">Create</a>

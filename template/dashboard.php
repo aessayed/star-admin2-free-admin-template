@@ -17,12 +17,9 @@
 
 <body>
 
-  <!-- Button trigger modal -->
   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Add New Company 
   </button>
-
-  <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -32,13 +29,10 @@
         </div>
         <form method="POST" action="dashboardaction.php">
           <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
+            <label for="name" class="form-label">Enter company name:</label>
             <input type="text" name="companyname" class="form-control" id="name" placeholder="company">
           </div>
-
           <div class="modal-body">
-
-
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -51,7 +45,7 @@
 
 
   <center>
-    <h3>what we have company</h3>
+    <h3>Available companies</h3>
 
   </center>
   <?php
@@ -62,12 +56,12 @@
     echo "
             <center>
             <main>
-             <div class='card' style='width: 18rem;'>
+             <div class='card mt-1' style='width: 18rem;'>
             
                 <div class='card-body'>
                     <h5 class='card-title'>$row[name]
-                    <a href='editnamecomp.php?id=$row[id]'> updated item</button></a> 
-                    <a href='deletenamecomp.php? id=$row[id]' class='btn btn-primary'>delete item</a>
+                    <a href='editnamecomp.php?id=$row[id]' style='display:flex;margin-left:4rem'> updated item</button></a> 
+                    <a href='deletenamecomp.php? id=$row[id]' class='btn mt-1 btn-primary'>Delete</a>
                     </h5>
                     
 

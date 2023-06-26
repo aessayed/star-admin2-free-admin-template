@@ -10,6 +10,8 @@ if(isset($_POST['order_btn'])){
    $street = $_POST['street'];
    $city = $_POST['city'];
    $country = $_POST['country'];
+   session_start();
+   $uid = $_SESSION['id'];
 
    $cart_query = mysqli_query($con, "SELECT * FROM cart");
    $price_total = 0;
@@ -22,7 +24,7 @@ if(isset($_POST['order_btn'])){
    };
 
    $total_product = implode(', ',$product_name);
-   $qry = "INSERT INTO `order` (name, number, email, method, street, city,  country, total_products, total_price) VALUES ('$name',$number,'$email','$method','$street','$city','$country','$total_product',$price_total)";
+   $qry = "INSERT INTO `order` (name, user_id, number, email, method, street, city,  country, total_products, total_price) VALUES ('$name', $uid, $number,'$email','$method','$street','$city','$country','$total_product',$price_total)";
    $detail_query = mysqli_query($con,$qry);
 
    if($cart_query && $detail_query){
